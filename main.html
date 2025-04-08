@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guwahati Tourism - Explore the Gateway to Northeast India</title>
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-color: #8b4513;
+      --secondary-color: #d4a76a;
+      --accent-color: #e9d8b9;
+      --dark-color: #2d2d2d;
+      --light-color: #f9f7f2;
+      --text-color: #333333; 
+      --temple-color: #8b4513;
+      --church-color: #4b6043;
+      --mosque-color: #2a4d69;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-color);
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      color: white;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary-color);
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    /* Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    section {
+      padding: 3rem 0;
+    }
+    
+    /* Header & Navigation */
+    header {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--light-color);
+      text-decoration: none;
+    }
+    
+    .logo span {
+      color: var(--secondary-color);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav li {
+      margin-left: 1.5rem;
+    }
+    
+    nav a {
+      color: var(--light-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary-color);
+      transition: width 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--secondary-color);
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/600') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 8rem 0;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--secondary-color);
+      color: var(--dark-color);
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: 2px solid var(--secondary-color);
+      margin: 0.5rem;
+    }
+    
+    .btn:hover {
+      background-color: transparent;
+      color: var(--secondary-color);
+    }
+    
+    /* Section Introduction */
+    .section-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+
+    /* Grid Styling for All Sections */
+    .religious-grid, .historical-grid, .adventurous-grid, .educational-grid, .nature-grid, .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .religious-place, .historical-place, .adventurous-place, .educational-place, .nature-place, .food-place {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: white;
+    }
+    
+    .religious-place:hover, .historical-place:hover, .adventurous-place:hover, .educational-place:hover, .nature-place:hover, .food-place:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .religious-img, .historical-img, .adventurous-img, .educational-img, .nature-img, .food-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .religious-content, .historical-content, .adventurous-content, .educational-content, .nature-content, .food-content {
+      padding: 1.5rem;
+    }
+    
+    .religious-location, .historical-location, .adventurous-location, .educational-location, .nature-location, .food-location {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      color: var(--dark-color);
+      font-size: 0.9rem;
+    }
+    
+    .religious-location::before, .historical-location::before, .adventurous-location::before, .educational-location::before, .nature-location::before, .food-location::before {
+      content: '📍';
+      margin-right: 0.5rem;
+    }
+    
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    details summary:hover {
+      color: var(--secondary-color);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 3rem 0 2rem;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-column h3 {
+      color: var(--secondary-color);
+      margin-bottom: 1.2rem;
+      font-size: 1.3rem;
+    }
+    
+    .footer-column p, .footer-column address {
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+    
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--secondary-color);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      
+      nav ul {
+        margin-top: 1rem;
+      }
+      
+      nav li {
+        margin: 0 0.7rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo">Guwahati <span>Tourism</span></a>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#religious">Religious Places</a></li>
+          <li><a href="#historical">Historical Places</a></li>
+          <li><a href="#adventurous">Adventurous Places</a></li>
+          <li><a href="#educational">Educational Places</a></li>
+          <li><a href="#nature">Nature Spots</a></li>
+          <li><a href="#food">Food & Dining</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="language-select">
+        <select id="language-select">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="as">অসমীয়া</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <h1>Explore Guwahati - Gateway to Northeast India</h1>
+      <p>Discover the spiritual richness, historical significance, adventurous spirit, and natural beauty of Guwahati through its diverse attractions.</p>
+      <div>
+        <a href="#religious" class="btn">Explore Religious Places</a>
+        <a href="#historical" class="btn">Explore Historical Places</a>
+        <a href="#adventurous" class="btn">Explore Adventurous Places</a>
+        <a href="#educational" class="btn">Explore Educational Places</a>
+        <a href="#nature" class="btn">Explore Nature Spots</a>
+        <a href="#food" class="btn">Explore Food & Dining</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Religious Places Section -->
+  <section id="religious" class="religious-places">
+    <div class="container">
+      <h2>Religious Places</h2>
+      <div class="section-intro">
+        <p>Guwahati is home to numerous religious sites of significant historical and spiritual importance. These sacred places offer visitors a glimpse into the region's rich multicultural heritage and architectural brilliance.</p>
+      </div>
+
+      <h3>Temples</h3>
+      <div class="religious-grid">
+        <!-- Kamakhya Temple -->
+        <div class="religious-place">
+          <img src="Images/kamakhya_temple.jpg" alt="Kamakhya Temple" class="religious-img">
+          <div class="religious-content">
+            <h3>Kamakhya Temple</h3>
+            <div class="religious-location">Nilachal Hill, Guwahati, Assam</div>
+            <p>A revered Shakti Peetha dedicated to Goddess Kamakhya, known for its distinctive architecture.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>The Kamakhya Temple is a major Tantric center, famous for the Ambubachi Mela festival celebrating the goddess's menstruation. Its ancient roots and unique beehive-shaped dome make it a significant pilgrimage site.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Umananda Temple -->
+        <div class="religious-place">
+          <img src="Images/umananda-temple.jpg" alt="Umananda Temple" class="religious-img">
+          <div class="religious-content">
+            <h3>Umananda Temple</h3>
+            <div class="religious-location">Peacock Island, Brahmaputra River</div>
+            <p>A beautiful Shiva temple on Peacock Island, offering stunning river views and accessible only by boat.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Built in the 17th century by Ahom king Gadadhar Singha, Umananda Temple features rock-cut figures and is especially vibrant during Maha Shivratri celebrations.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Basistha Temple -->
+        <div class="religious-place">
+          <img src="Images/basistha_temple.jpeg" alt="Basistha Temple" class="religious-img">
+          <div class="religious-content">
+            <h3>Basistha Temple</h3>
+            <div class="religious-location">Basistha, Guwahati</div>
+            <p>An ancient temple dedicated to Lord Shiva, located in a serene environment where three mountain streams converge.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Believed to be the ashram of sage Basistha from the Ramayana, this temple is surrounded by lush greenery and a waterfall, offering a peaceful retreat.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Navagraha Temple -->
+        <div class="religious-place">
+          <img src="Images/navagraha_temple.jpeg" alt="Navagraha Temple" class="religious-img">
+          <div class="religious-content">
+            <h3>Navagraha Temple</h3>
+            <div class="religious-location">Chitrasal Hill, Guwahati</div>
+            <p>A historic temple dedicated to the nine celestial bodies, showcasing ancient astronomical significance.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Built during the Ahom dynasty, this temple represents the nine planets with unique stone carvings and is a center for astrological studies and rituals.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- ISKCON Temple -->
+        <div class="religious-place">
+          <img src="Images/iskcon_temple.jpg" alt="ISKCON Temple" class="religious-img">
+          <div class="religious-content">
+            <h3>ISKCON Temple</h3>
+            <div class="religious-location">Ulubari, Guwahati</div>
+            <p>A Krishna temple known for its peaceful ambiance and spiritual activities.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Part of the global ISKCON network, this temple hosts daily prayers, kirtans, and festivals like Janmashtami, attracting devotees and visitors alike.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Doul Govinda Temple -->
+        <div class="religious-place">
+          <img src="Images/doul_govinda_temple.jpg" alt="Doul Govinda Temple" class="religious-img">
+          <div class="religious-content">
+            <h3>Doul Govinda Temple</h3>
+            <div class="religious-location">North Guwahati</div>
+            <p>A famous Vaishnavite temple on the banks of the Brahmaputra River.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Dedicated to Lord Krishna, this temple is renowned for its Holi celebrations (Doul Utsav) and offers scenic views of the river and surrounding hills.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Purva Tirupati Balaji Temple -->
+        <div class="religious-place">
+          <img src="Images/balaji_temple.jpg" alt="Purva Tirupati Balaji Temple" class="religious-img">
+          <div class="religious-content">
+            <h3>Purva Tirupati Balaji Temple</h3>
+            <div class="religious-location">Betkuchi, Guwahati</div>
+            <p>A beautiful temple dedicated to Lord Venkateswara, reflecting South Indian architectural styles.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Built with white marble, this temple is a replica of Tirupati Balaji, offering a serene environment and hosting vibrant festivals like Brahmotsavam.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Lankeshwar Temple -->
+        <div class="religious-place">
+          <img src="Images/lankeshwar_temple.jpg" alt="Lankeshwar Temple" class="religious-img">
+          <div class="religious-content">
+            <h3>Lankeshwar Temple</h3>
+            <div class="religious-location">Lankeshwar Hill, Guwahati</div>
+            <p>A less crowded but significant Shiva temple offering tranquility and scenic views.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Located near Gauhati University, this ancient temple is carved into a hill and is a hidden gem for devotees seeking peace away from the city bustle.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <h3>Churches</h3>
+      <div class="religious-grid">
+        <!-- Christ Church -->
+        <div class="religious-place">
+          <img src="Images/christ_church.jpg" alt="Christ Church" class="religious-img">
+          <div class="religious-content">
+            <h3>Christ Church</h3>
+            <div class="religious-location">Panbazar, Guwahati</div>
+            <p>A significant Christian place of worship featuring colonial architecture with stained glass windows.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Established in the 19th century during British rule, Christ Church offers Gothic-style elements and a small museum, serving the community in English and Assamese.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Cathedral of St. Joseph -->
+        <div class="religious-place">
+          <img src="Images/churches.jpeg" alt="Cathedral of St. Joseph" class="religious-img">
+          <div class="religious-content">
+            <h3>Cathedral of St. Joseph</h3>
+            <div class="religious-location">Paltanbazar, Guwahati</div>
+            <p>A modern cathedral blending traditional and contemporary design, seat of the Roman Catholic Diocese.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Consecrated in the 1990s, it features vibrant stained glass and spacious interiors, hosting regular masses and community events.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Guwahati Baptist Church -->
+        <div class="religious-place">
+          <img src="Images/Guwahati-Baptist-Church_5802a90c81743f43960954bd44d4024c.jpg" alt="Guwahati Baptist Church" class="religious-img">
+          <div class="religious-content">
+            <h3>Guwahati Baptist Church</h3>
+            <div class="religious-location">Christian Basti, Guwahati</div>
+            <p>A key church from the early 20th century, blending modern and traditional Christian architecture.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Founded by American missionaries, it supports a strong youth ministry and various community services, reflecting its historical growth.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <h3>Mosques</h3>
+      <div class="religious-grid">
+        <!-- Burha Jame Masjid -->
+        <div class="religious-place">
+          <img src="Images/burha-jame-masjid-guwahati-mosques-0hnzis1ise.avif" alt="Burha Jame Masjid" class="religious-img">
+          <div class="religious-content">
+            <h3>Burha Jame Masjid</h3>
+            <div class="religious-location">Ambari, Guwahati</div>
+            <p>An ancient mosque with historical significance and traditional Islamic architecture.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Built during the Ahom dynasty, it blends Mughal and Assamese styles, serving as a center for worship and education.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Machkhowa Jame Masjid -->
+        <div class="religious-place">
+          <img src="Images/machkhowa-mosque-machkhuwa-guwahati-mosques-mxkucjlk41.avif" alt="Machkhowa Jame Masjid" class="religious-img">
+          <div class="religious-content">
+            <h3>Machkhowa Jame Masjid</h3>
+            <div class="religious-location">Machkhowa, Guwahati</div>
+            <p>A prominent mosque with minarets and domes, adorned with calligraphy and patterns.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Known for Friday prayers, it includes a madrasa and serves a large Muslim community in Guwahati.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Haji Musafir Khana Masjid -->
+        <div class="religious-place">
+          <img src="Images/haji-musafir-khana-trust-board-gandhibasti-guwahati-lodging-services-mqv6njyfim.avif" alt="Haji Musafir Khana Masjid" class="religious-img">
+          <div class="religious-content">
+            <h3>Haji Musafir Khana Masjid</h3>
+            <div class="religious-location">Fancy Bazar, Guwahati</div>
+            <p>A contemporary mosque in a bustling area, serving locals and travelers alike.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Established in the commercial district, it offers traveler facilities and hosts Ramadan iftars.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Hajo Powa Mecca -->
+        <div class="religious-place">
+          <img src="Images/hajo_powa_mecca.jpeg" alt="Hajo Powa Mecca" class="religious-img">
+          <div class="religious-content">
+            <h3>Hajo Powa Mecca</h3>
+            <div class="religious-location">Hajo, 24 km from Guwahati</div>
+            <p>A revered Islamic pilgrimage site said to contain soil from Mecca.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Built in the 17th century by Pir Giasuddin Auliya, this mosque atop Garurachal Hill attracts both Muslim and Hindu pilgrims, symbolizing religious harmony.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historical Places Section -->
+  <section id="historical" class="historical-places">
+    <div class="container">
+      <h2>Historical Places</h2>
+      <div class="section-intro">
+        <p>Guwahati's historical sites, including museums, monuments, and archaeological ruins, reflect its rich past and cultural evolution.</p>
+      </div>
+      <div class="historical-grid">
+        <!-- Assam State Museum -->
+        <div class="historical-place">
+          <img src="Images/assam-state-museum-guwahati-dispur-assam-3-new-attr-hero.jpeg" alt="Assam State Museum" class="historical-img">
+          <div class="historical-content">
+            <h3>Assam State Museum</h3>
+            <div class="historical-location">Dighalipukhuri, Guwahati</div>
+            <p>A museum showcasing Assam's history, culture, and natural heritage with extensive exhibits.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Founded in 1940, it features archaeological artifacts, ethnographic objects, and natural specimens, offering a deep dive into Assam’s heritage.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Srimanta Sankardev Kalaksავ
+
+        <!-- Guwahati Planetarium -->
+        <div class="historical-place">
+          <img src="Images/Guwahati_Planetarium.jpg" alt="Guwahati Planetarium" class="historical-img">
+          <div class="historical-content">
+            <h3>Guwahati Planetarium</h3>
+            <div class="historical-location">MG Road, Guwahati</div>
+            <p>A modern facility offering educational astronomy shows for all ages.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>With advanced projection technology, it simulates the night sky and includes exhibits on space exploration.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Saraighat Bridge -->
+        <div class="historical-place">
+          <img src="Images/saraighat.jpeg" alt="Saraighat Bridge" class="historical-img">
+          <div class="historical-content">
+            <h3>Saraighat Bridge</h3>
+            <div class="historical-location">Brahmaputra River, Guwahati</div>
+            <p>An iconic rail-cum-road bridge, a vital historical and engineering landmark.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Opened in 1962, it was the first bridge over the Brahmaputra, named after the Battle of Saraighat, enhancing regional connectivity.</p>
+            </details>
+          </div>
+        </div>
+
+       
+
+        <!-- Guwahati War Memorial -->
+        <div class="historical-place">
+          <img src="Images/m_Guwahati_War_Memorial_1_l_480_640.avif" alt="Guwahati War Memorial" class="historical-img">
+          <div class="historical-content">
+            <h3>Guwahati War Memorial</h3>
+            <div class="historical-location">Dighalipukhuri, Guwahati</div>
+            <p>A memorial honoring soldiers who fought in World War II and other conflicts.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Built to commemorate bravery, it features plaques and a serene park, offering a place for reflection and remembrance.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Madan Kamdev -->
+        <div class="historical-place">
+          <img src="Images/sculptures-in-madan-kamdev.jpg" alt="Madan Kamdev" class="historical-img">
+          <div class="historical-content">
+            <h3>Madan Kamdev</h3>
+            <div class="historical-location">30 km from Guwahati</div>
+            <p>An archaeological site with ruins of ancient temples linked to mythological Madan Kamdev.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Dating back to the 9th-10th century, this site features intricate carvings of deities, often called the "Khajuraho of Assam" for its erotic sculptures.</p>
+            </details>
+          </div>
+        </div>
+
+
+        <!-- Tezpur Ruins -->
+        <div class="historical-place">
+          <img src="Images/tezapur.jpeg" alt="Tezpur Ruins" class="historical-img">
+          <div class="historical-content">
+            <h3>Tezpur Ruins</h3>
+            <div class="historical-location">Tezpur, 180 km from Guwahati</div>
+            <p>Ruins of ancient temples and palaces from the medieval era, showcasing Assam’s grandeur.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>These remnants from the 8th-10th centuries include the Bamuni Hills and Da Parbatia temple ruins, reflecting exquisite craftsmanship.</p>
+            </details>
+          </div>
+        </div>
+
+     
+
+        <!-- Barpeta Satra -->
+        <div class="historical-place">
+          <img src="Images/barpeta.jpeg" alt="Barpeta Satra" class="historical-img">
+          <div class="historical-content">
+            <h3>Barpeta Satra</h3>
+            <div class="historical-location">Barpeta, 90 km from Guwahati</div>
+            <p>A historical cultural institution founded in the 16th century to spread Vaishnavite culture.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Founded by Madhabdev, disciple of Srimanta Sankardev, this satra is famous for its Holi festival and traditional Assamese arts.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Adventurous Places Section -->
+  <section id="adventurous" class="adventurous-places">
+    <div class="container">
+      <h2>Adventurous Places</h2>
+      <div class="section-intro">
+        <p>Guwahati offers thrilling activities like hiking, wildlife safaris, and river rafting amidst its natural landscapes.</p>
+      </div>
+      <div class="adventurous-grid">
+        <!-- Nilachal Hill Trekking -->
+        <div class="adventurous-place">
+          <img src="Images/118913732.cms.webp" alt="Nilachal Hill Trekking" class="adventurous-img">
+          <div class="adventurous-content">
+            <h3>Nilachal Hill Trekking</h3>
+            <div class="adventurous-location">Nilachal Hill, Guwahati</div>
+            <p>Scenic trails around Nilachal Hill with panoramic views of the city and river.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Offering routes for all levels, this trek includes temple visits and lush greenery, ideal for nature lovers.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Basistha Reserve Forest Hiking -->
+        <div class="adventurous-place">
+          <img src="Images/basista reserve forest.jpeg" alt="Basistha Reserve Forest" class="adventurous-img">
+          <div class="adventurous-content">
+            <h3>Basistha Reserve Forest Hiking</h3>
+            <div class="adventurous-location">Basistha, Guwahati</div>
+            <p>Hiking trails through dense forest and along mountain streams near Basistha Temple.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>A biodiversity hotspot with well-maintained paths, perfect for spotting wildlife and enjoying nature.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Pobitora Wildlife Sanctuary -->
+        <div class="adventurous-place">
+          <img src="Images/pobitora.jpeg" alt="Pobitora Wildlife Sanctuary" class="adventurous-img">
+          <div class="adventurous-content">
+            <h3>Pobitora Wildlife Sanctuary</h3>
+            <div class="adventurous-location">Morigaon District, 50 km from Guwahati</div>
+            <p>A sanctuary known for one-horned rhinos, offering jeep and elephant safaris.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Compact yet rich in wildlife, Pobitora allows close encounters with rhinos, birds, and more.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- River Rafting on Brahmaputra -->
+        <div class="adventurous-place">
+          <img src="Images/riverbrahmaputra.jpeg" alt="River Rafting on Brahmaputra" class="adventurous-img">
+          <div class="adventurous-content">
+            <h3>River Rafting on Brahmaputra</h3>
+            <div class="adventurous-location">Brahmaputra River, Guwahati</div>
+            <p>Thrilling rafting on the mighty Brahmaputra with varying rapids.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Operators provide guided trips through scenic gorges, with safety gear, showcasing the river’s ecosystems.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educational Places Section -->
+  <section id="educational" class="educational-places">
+    <div class="container">
+      <h2>Educational Places</h2>
+      <div class="section-intro">
+        <p>Guwahati is a hub of learning with prestigious institutions offering diverse educational opportunities.</p>
+      </div>
+      <div class="educational-grid">
+        <!-- Guwahati University -->
+        <div class="educational-place">
+          <img src="Images/guwahati_university.jpg" alt="Guwahati University" class="educational-img">
+          <div class="educational-content">
+            <h3>Guwahati University</h3>
+            <div class="educational-location">Jalukbari, Guwahati</div>
+            <p>A prestigious educational institution offering a variety of courses.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Established in 1948, it’s one of the oldest universities in Northeast India, known for its research and academic excellence.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Assam Engineering College -->
+        <div class="educational-place">
+          <img src="Images/assam_engineering_college.jpg" alt="Assam Engineering College" class="educational-img">
+          <div class="educational-content">
+            <h3>Assam Engineering College</h3>
+            <div class="educational-location">Jalukbari, Guwahati</div>
+            <p>An engineering college with a legacy of excellence in education.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Founded in 1955, it’s Assam’s first engineering college, offering cutting-edge technical education and research opportunities.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Cotton University -->
+        <div class="educational-place">
+          <img src="Images/cotton_university.jpg" alt="Cotton University" class="educational-img">
+          <div class="educational-content">
+            <h3>Cotton University</h3>
+            <div class="educational-location">Panbazar, Guwahati</div>
+            <p>One of the oldest universities in Assam, known for its academic rigor.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Tracing its origins to 1901 as Cotton College, it offers diverse programs and has a rich history of shaping leaders.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Indian Institute of Technology Guwahati -->
+        <div class="educational-place">
+          <img src="Images/iit_guwahati.jpg" alt="IIT Guwahati" class="educational-img">
+          <div class="educational-content">
+            <h3>Indian Institute of Technology Guwahati</h3>
+            <div class="educational-location">North Guwahati</div>
+            <p>A leading technology institute in India, offering various technical programs.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Established in 1994, IIT Guwahati is renowned globally for its innovation, research, and scenic campus by the Brahmaputra.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Assam Medical College -->
+        <div class="educational-place">
+          <img src="Images/assam_medical_college.jpg" alt="Assam Medical College" class="educational-img">
+          <div class="educational-content">
+            <h3>Assam Medical College</h3>
+            <div class="educational-location">Dibrugarh, 400 km from Guwahati</div>
+            <p>The first medical college in Assam, providing quality medical education.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Founded in 1947, it’s a pioneer in healthcare education and serves as a major hospital in the region.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Guwahati Zoo and Botanical Garden -->
+        <div class="educational-place">
+          <img src="Images/guwahati_zoo_botanical_garden.jpg" alt="Guwahati Zoo and Botanical Garden" class="educational-img">
+          <div class="educational-content">
+            <h3>Guwahati Zoo and Botanical Garden</h3>
+            <div class="educational-location">Hengrabari, Guwahati</div>
+            <p>A great place to explore wildlife and learn about biodiversity.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Spanning 432 acres, it houses diverse species and educates visitors on conservation and Northeast India’s flora and fauna.</p>
+            </details>
+          </div>
+        </div>
+
+  
+
+        <!-- National Institute of Fashion Technology, Guwahati -->
+        <div class="educational-place">
+          <img src="Images/nift_guwahati.jpg" alt="NIFT Guwahati" class="educational-img">
+          <div class="educational-content">
+            <h3>National Institute of Fashion Technology, Guwahati</h3>
+            <div class="educational-location">Guwahati</div>
+            <p>A premier institute for fashion designing and related courses.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Part of the NIFT network, it blends creativity with technology, preparing students for the global fashion industry.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Tezpur University -->
+        <div class="educational-place">
+          <img src="Images/tezpur_university.jpg" alt="Tezpur University" class="educational-img">
+          <div class="educational-content">
+            <h3>Tezpur University</h3>
+            <div class="educational-location">Tezpur, 180 km from Guwahati</div>
+            <p>A leading university known for its interdisciplinary programs.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Established in 1994, it’s a central university excelling in science, technology, and humanities amidst a lush campus.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Gauhati Commerce College -->
+        <div class="educational-place">
+          <img src="Images/gauhati_commerce_college.jpg" alt="Gauhati Commerce College" class="educational-img">
+          <div class="educational-content">
+            <h3>Gauhati Commerce College</h3>
+            <div class="educational-location">Chandmari, Guwahati</div>
+            <p>A reputed college offering commerce courses in Guwahati.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Founded in 1962, it’s a top institution for commerce education, producing business leaders and professionals.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nature Spots Section -->
+  <section id="nature" class="nature-places">
+    <div class="container">
+      <h2>Nature Spots</h2>
+      <div class="section-intro">
+        <p>Experience the breathtaking natural beauty of Guwahati and its surroundings, from national parks to serene rivers.</p>
+      </div>
+      <div class="nature-grid">
+        <!-- Kaziranga National Park -->
+        <div class="nature-place">
+          <img src="Images/kaziranga_national_park.jpg" alt="Kaziranga National Park" class="nature-img">
+          <div class="nature-content">
+            <h3>Kaziranga National Park</h3>
+            <div class="nature-location">260 km from Guwahati</div>
+            <p>A UNESCO World Heritage site known for its one-horned rhinoceroses.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Famous for its successful conservation efforts, it’s home to tigers, elephants, and a variety of bird species amidst grasslands and forests.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Manas National Park -->
+        <div class="nature-place">
+          <img src="Images/manas_national_park.jpg" alt="Manas National Park" class="nature-img">
+          <div class="nature-content">
+            <h3>Manas National Park</h3>
+            <div class="nature-location">176 km from Guwahati</div>
+            <p>A UNESCO World Heritage site known for its rich biodiversity.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Bordering Bhutan, it’s a biosphere reserve with rare species like the pygmy hog and golden langur, offering scenic beauty.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Umananda Island -->
+        <div class="nature-place">
+          <img src="Images/umananda_island.jpg" alt="Umananda Island" class="nature-img">
+          <div class="nature-content">
+            <h3>Umananda Island</h3>
+            <div class="nature-location">Brahmaputra River, Guwahati</div>
+            <p>A small island offering picturesque views and serenity.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Also known as Peacock Island, it’s the smallest river island in the world, accessible by ferry, with lush greenery and langurs.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Majuli Island -->
+        <div class="nature-place">
+          <img src="Images/majuli_island.jpg" alt="Majuli Island" class="nature-img">
+          <div class="nature-content">
+            <h3>Majuli Island</h3>
+            <div class="nature-location">350 km from Guwahati</div>
+            <p>The world’s largest river island, known for its vibrant culture and natural beauty.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>A cultural hub with satras (monasteries), it features wetlands, migratory birds, and a unique shrinking ecosystem.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Nameri National Park -->
+        <div class="nature-place">
+          <img src="Images/nameri_national_park.jpg" alt="Nameri National Park" class="nature-img">
+          <div class="nature-content">
+            <h3>Nameri National Park</h3>
+            <div class="nature-location">220 km from Guwahati</div>
+            <p>A beautiful park famous for bird watching and trekking.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Along the Jia Bhoroli River, it’s a haven for birdwatchers with species like the white-winged wood duck, plus rafting opportunities.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Dibru-Saikhowa National Park -->
+        <div class="nature-place">
+          <img src="Images/Dibru_Saikhuwa_National_Park.jpg" alt="Dibru-Saikhowa National Park" class="nature-img">
+          <div class="nature-content">
+            <h3>Dibru-Saikhowa National Park</h3>
+            <div class="nature-location">500 km from Guwahati</div>
+            <p>A haven for wildlife, known for its swamps and migratory birds.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Featuring feral horses and rare birds like the Bengal florican, it’s a biodiversity hotspot accessible by boat.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Sualkuchi -->
+        <div class="nature-place">
+          <img src="Images/sualkichi.jpg" alt="Sualkuchi" class="nature-img">
+          <div class="nature-content">
+            <h3>Sualkuchi</h3>
+            <div class="nature-location">35 km from Guwahati</div>
+            <p>A village famous for its natural beauty and silk weaving traditions.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Known as the "Manchester of Assam," it offers serene riverside views and a glimpse into traditional Muga silk production.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Brahmaputra River -->
+        <div class="nature-place">
+          <img src="Images/brahmaputra.jpg" alt="Brahmaputra River" class="nature-img">
+          <div class="nature-content">
+            <h3>Brahmaputra River</h3>
+            <div class="nature-location">Guwahati</div>
+            <p>The lifeline of Assam, known for its vastness and rich ecosystems.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>One of the world’s mightiest rivers, it supports diverse wildlife and offers stunning sunset views from Guwahati’s riverfront.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Bhorali River -->
+        <div class="nature-place">
+          <img src="Images/bhorali_river.jpg" alt="Bhorali River" class="nature-img">
+          <div class="nature-content">
+            <h3>Bhorali River</h3>
+            <div class="nature-location">Near Nameri, 220 km from Guwahati</div>
+            <p>A scenic river known for its tranquility and surrounding nature.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Flowing through lush forests, it’s ideal for fishing, rafting, and enjoying the calm beauty of Assam’s wilderness.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Kakodonga River -->
+        <div class="nature-place">
+          <img src="Images/kakodonga_river.jpg" alt="Kakodonga River" class="nature-img">
+          <div class="nature-content">
+            <h3>Kakodonga River</h3>
+            <div class="nature-location">Near Jorhat, 300 km from Guwahati</div>
+            <p>A peaceful river surrounded by lush greenery, offering a calm retreat.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>A lesser-known gem, it provides a serene escape with opportunities for picnics and nature walks along its banks.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food & Dining Section -->
+  <section id="food" class="food-places">
+    <div class="container">
+      <h2>Food & Dining</h2>
+      <div class="section-intro">
+        <p>Savor the authentic flavors of Assam with traditional dishes and unique dining experiences in Guwahati.</p>
+      </div>
+      <div class="food-grid">
+        <!-- Khorika -->
+        <div class="food-place">
+          <img src="Images/khorika.jpg" alt="Khorika" class="food-img">
+          <div class="food-content">
+            <h3>Khorika</h3>
+            <div class="food-location">GS Road, Guwahati</div>
+            <p>An authentic Assamese restaurant known for its grilled meats and fish dishes.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Famous for its bamboo-skewered delicacies, Khorika offers a rustic dining experience with local spices and flavors.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Paradise Restaurant -->
+        <div class="food-place">
+          <img src="Images/paradise_restaurant.jpg" alt="Paradise Restaurant" class="food-img">
+          <div class="food-content">
+            <h3>Paradise Restaurant</h3>
+            <div class="food-location">Silpukhuri, Guwahati</div>
+            <p>Famous for authentic Assamese and North-Eastern cuisine in a cozy ambiance.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>A local favorite, it serves thalis with pork, fish, and bamboo shoot dishes, reflecting Assam’s culinary heritage.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Rajmahal Restaurant -->
+        <div class="food-place">
+          <img src="Images/rajmal.jpg" alt="Rajmahal Restaurant" class="food-img">
+          <div class="food-content">
+            <h3>Rajmahal Restaurant</h3>
+            <div class="food-location">Paltan Bazar, Guwahati</div>
+            <p>A well-known place offering Assamese and Indian delicacies.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>With a diverse menu, it’s popular for its flavorful curries, tandoori items, and traditional Assamese platters.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Dolphin Restaurant -->
+        <div class="food-place">
+          <img src="Images/Maligaon, Guwahati.avif" alt="Dolphin Restaurant" class="food-img">
+          <div class="food-content">
+            <h3>Dolphin Restaurant</h3>
+            <div class="food-location">Maligaon, Guwahati</div>
+            <p>A casual dining spot serving seafood and Assamese delicacies.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Renowned for its fresh river fish preparations and simple, hearty meals loved by locals.</p>
+            </details>
+          </div>
+        </div>
+
+
+
+        <!-- Tandoor -->
+        <div class="food-place">
+          <img src="Images/Tandoor Paltan Bazar, Guwahat.jpg" alt="Tandoor" class="food-img">
+          <div class="food-content">
+            <h3>Tandoor</h3>
+            <div class="food-location">Paltan Bazar, Guwahati</div>
+            <p>Serving authentic tandoori and Assamese fusion dishes with meats and seafood.</p>
+            <details>
+              <summary>Learn More</summary>
+              <p>Combines smoky tandoori flavors with Assamese spices, offering a delightful fusion dining experience.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>Guwahati Tourism promotes the rich cultural heritage, natural beauty, and spiritual significance of Guwahati, the gateway to Northeast India.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#religious">Religious Places</a></li>
+            <li><a href="#historical">Historical Places</a></li>
+            <li><a href="#adventurous">Adventurous Places</a></li>
+            <li><a href="#educational">Educational Places</a></li>
+            <li><a href="#nature">Nature Spots</a></li>
+            <li><a href="#food">Food & Dining</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Information</h3>
+          <address>
+            4th Floor, Asom Paryatan Bhawan A.K. Azad Road, Paltan Bazar<br>
+            Guwahati, Assam 781008<br>
+            India
+          </address>
+          <p>Email: mdatdc@gmail.com</p>
+          <p>Phone: +91-361-2633654 </p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Guwahati Tourism. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
