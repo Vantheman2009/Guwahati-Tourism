@@ -1,10 +1,4 @@
-Here’s a `README.md` file tailored for your Guwahati Tourism HTML project. It highlights the project purpose, features, technologies, and instructions for usage:
 
----
-
-**`README.md`**
-
-```markdown
 # Guwahati Tourism Website 🌄
 
 Welcome to the **Guwahati Tourism** project — a beautiful, responsive, and informative website that introduces users to the cultural, religious, and natural richness of Guwahati, the gateway to Northeast India.
